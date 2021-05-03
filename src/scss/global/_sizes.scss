@@ -1,0 +1,10 @@
+:root {
+  --mobile-nav-height:    60px;
+  --desktop-bar-1-height: 48px;
+  --desktop-bar-2-height: 60px;
+  --desktop-nav-height:   calc( var(--desktop-bar-1-height) + var(--desktop-bar-2-height));
+
+  --nav-dropdown-height: 400px;
+  --nav-dropdown-shift-desktop: calc(-1* calc(var(--nav-dropdown-height) - var(--desktop-nav-height)));
+  --nav-dropdown-shift-mobile:  calc(-1* calc(var(--nav-dropdown-height) - var(--mobile-nav-height )));
+}
