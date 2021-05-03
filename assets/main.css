@@ -21,7 +21,7 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #F5F5F5;
   color: #111;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
@@ -125,4 +125,49 @@ nav .nav-desktop .nav__top .content-container ul li {
 
 nav .nav-desktop .nav__top .content-container ul li:not(:last-child) {
   border-right: solid black 1px;
+}
+
+nav .nav-desktop .nav__bottom {
+  display: grid;
+  grid-template-columns: 2fr 5fr 2fr;
+  width: 100%;
+  height: var(--desktop-bar-2-height);
+  background: #fff;
+}
+
+nav .nav-desktop .nav__bottom .content-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav .nav-desktop .nav__bottom .content-container:not(.nav-items):nth-child(1) {
+  padding-right: 50%;
+}
+
+nav .nav-desktop .nav__bottom .content-container:not(.nav-items):nth-child(3) {
+  padding-left: 50%;
+}
+
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1.4em;
+  transition: border 0.2s ease, background 0.2s ease;
+  border: dashed green 1px;
+}
+
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item:hover {
+  cursor: pointer;
+}
+
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text {
+  border: solid hotpink 1px;
+}
+
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked {
+  border-bottom: solid black 3px;
 }

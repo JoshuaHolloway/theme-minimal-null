@@ -3,7 +3,7 @@
   // border: dashed hotpink 5px;
   .nav__top {
     display: grid;
-    grid-template-columns: 2fr 7fr 3fr;  // 2/12, 8/12, 2/12
+    grid-template-columns: 2fr 7fr 3fr;  // 2/12, 7/12, 3/12
 
     height: var(--desktop-bar-1-height);
     padding-right: 1%; // makes 'Sign In' look good on smaller desktop
@@ -36,4 +36,59 @@
 
     } // .content-container
   }
+
+  .nav__bottom {
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr; // 2/7, 5/7, 2/7
+    width: 100%;
+    height: var(--desktop-bar-2-height);
+    background: $background-1;
+
+    .content-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      // border: dashed green 2px;
+      &:not(.nav-items) {
+        // background: yellow;
+        $nav_content_container_padding: 50%;
+        &:nth-child(1) { padding-right: $nav_content_container_padding; }
+        &:nth-child(3) { padding-left: $nav_content_container_padding; }
+      }
+      
+      &.nav-items {
+        // border: dashed red 2px;
+        .nav-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          height: 100%;
+          width: 100%;
+          
+          // border: dashed hotpink 1px;
+          
+          font-size: 1.4em;
+  
+          transition: border 0.2s ease, background 0.2s ease;
+  
+          &:hover { cursor: pointer; }
+
+          border: dashed green 1px;
+          .nav-item__text {
+            border: solid hotpink 1px;
+
+            &.clicked {
+              border-bottom: solid black 3px;
+            }
+          } // .nav-item__text
+        } // .nav-item
+
+
+      }
+  
+    } // .content-container
+  } // .nav__bottom
+
 }
