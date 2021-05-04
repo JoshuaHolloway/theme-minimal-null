@@ -79,7 +79,7 @@
           .nav-item__text {
             border: solid hotpink 1px;
 
-            &.clicked {
+            &.clicked, &.hovered {
               border-bottom: solid black 3px;
             }
           } // .nav-item__text

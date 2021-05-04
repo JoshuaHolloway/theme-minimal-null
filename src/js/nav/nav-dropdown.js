@@ -14,7 +14,6 @@ let is_nav_dropdown_open = false;
 
 // const nav_items = gsap.utils.toArray('.nav-desktop .nav-item');
 const nav_items = document.querySelectorAll('.nav-desktop .nav-item');
-const nav_item__text = document.querySelector('.nav-desktop .nav-item .nav-item__text');
 
 // ==============================================
 
@@ -138,7 +137,7 @@ const close = () => {
 const click_listener = (event) => {
 
   // -Listening for event-capturing (not event-bubbling)
-  event.stopPropagation(); // -Don't listen for click event on <span> inside .nav-item
+  // event.stopPropagation(); // -Don't listen for click event on <span> inside .nav-item
   const nav_item = event.currentTarget;
   
   // Open nav-dropdown with corresponding data
@@ -155,7 +154,7 @@ const click_listener = (event) => {
   reset_nav_item_click_listeners();
   
   // disable event listener to prevent double open of nav-dropdown for same nav-item
-  nav_item.removeEventListener('click', click_listener, true);
+  nav_item.removeEventListener('click', click_listener);
 
   // Display the border-bottom on nav-item's child
   nav_item.children[0].classList.add('clicked');
@@ -165,31 +164,12 @@ const click_listener = (event) => {
 
 const reset_nav_item_click_listeners = () => {
 
-
-  // nav_items[0].addEventListener('click', (e) => {
-  //   console.log('OUTER, e.target: ', e.currentTarget);
-  //   e.stopPropagation();
-  // }, true);
-  nav_item__text.addEventListener('click', () => {
-    console.log('INNER');
-  }, true);
-
-  // const FF = (e) => {
-  //   console.log('OUTER, e.target: ', e.currentTarget);
-  //   e.stopPropagation();
-  // };
-
   // this will run at page load and after the nav-dropdown is closed
   nav_items.forEach((nav_item, idx) => {
 
-    // nav_item.addEventListener('click', (e) => {
-    //   console.log('OUTER');
-    //   e.stopPropagation();
-    // }, true);
-
-
-    //nav_item.addEventListener('click', FF, true);
-    nav_item.addEventListener('click', click_listener, true);
+    nav_item.addEventListener('click', click_listener);
+    nav_item.addEventListener('mouseover',  () => nav_item.children[0].classList.add('hovered'));
+    nav_item.addEventListener('mouseleave', () => nav_item.children[0].classList.remove('hovered'));
 
     // Remove clicked highlighting on nav_item's child    
     nav_item.children[0].classList.remove('clicked');

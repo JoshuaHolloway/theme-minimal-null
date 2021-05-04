@@ -168,6 +168,6 @@ nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__
   border: solid hotpink 1px;
 }
 
-nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked {
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked, nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.hovered {
   border-bottom: solid black 3px;
 }
