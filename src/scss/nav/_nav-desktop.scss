@@ -1,5 +1,7 @@
 .nav-desktop {
 
+  // - - - - - - - - - - - - - - - - - - - - - - 
+
   // border: dashed hotpink 5px;
   .nav__top {
     display: grid;
@@ -35,7 +37,9 @@
       } // ul
 
     } // .content-container
-  }
+  } // .nav__top
+
+  // - - - - - - - - - - - - - - - - - - - - - - 
 
   .nav__bottom {
     display: grid;
@@ -63,25 +67,20 @@
           display: flex;
           justify-content: center;
           align-items: center;
-  
           height: 100%;
           width: 100%;
+          font-size: 1.4em;
+          transition: border 0.2s ease, background 0.2s ease;
           
           // border: dashed hotpink 1px;
-          
-          font-size: 1.4em;
-  
-          transition: border 0.2s ease, background 0.2s ease;
-  
           &:hover { cursor: pointer; }
 
           border: dashed green 1px;
           .nav-item__text {
             border: solid hotpink 1px;
-
-            &.clicked, &.hovered {
-              border-bottom: solid black 3px;
-            }
+            
+            &.hovered { border-bottom: solid $color-2 3px; }
+            &.clicked, &.clicked:not(.hovered) { border-bottom: solid black 3px; }
           } // .nav-item__text
         } // .nav-item
 
@@ -90,5 +89,7 @@
   
     } // .content-container
   } // .nav__bottom
+
+  // - - - - - - - - - - - - - - - - - - - - - - 
 
 }

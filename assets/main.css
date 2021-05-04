@@ -94,6 +94,28 @@ nav {
   background: #F5F5F5;
 }
 
+nav .nav-dropdown {
+  position: fixed;
+  top: calc(-1 * var(--nav-dropdown-height));
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  height: var(--nav-dropdown-height);
+  width: 100vw;
+  background: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  nav .nav-dropdown {
+    display: none;
+  }
+}
+
+nav .nav-dropdown__col {
+  border: dashed hotpink 5px;
+}
+
 nav .nav-desktop .nav__top {
   display: grid;
   grid-template-columns: 2fr 7fr 3fr;
@@ -168,6 +190,10 @@ nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__
   border: solid hotpink 1px;
 }
 
-nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked, nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.hovered {
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.hovered {
+  border-bottom: solid #7E7E7E 3px;
+}
+
+nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked, nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked:not(.hovered) {
   border-bottom: solid black 3px;
 }

@@ -4,5 +4,6 @@ nav {
   // align-items: center;
   background: $background-2;
 
+  @import 'nav-dropdown';
   @import 'nav-desktop';
 }

@@ -1,0 +1,22 @@
+.nav-dropdown { position: fixed;
+
+  top: calc(-1 * var(--nav-dropdown-height));
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+
+  height: var(--nav-dropdown-height);
+  width: 100vw;
+  
+  background: $background-1;
+
+  @media screen and (max-width: 1024px) { // x <= 1024
+    & { display: none; }
+  }
+
+  &__col {
+    border: dashed hotpink 5px;
+  }
+}
