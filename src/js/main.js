@@ -1,3 +1,1 @@
-import f from './f.js';
-
-console.log(f(3));
+import './nav/nav-dropdown.js';

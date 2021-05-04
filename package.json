@@ -21,6 +21,7 @@
   "homepage": "https://github.com/JoshuaHolloway/theme-minimal-null#readme",
   "dependencies": {
     "webpack": "^5.36.2",
-    "webpack-cli": "^4.6.0"
+    "webpack-cli": "^4.6.0",
+    "gsap": "npm:@gsap/shockingly@^3.6.1"
   }
 }

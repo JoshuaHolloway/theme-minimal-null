@@ -1,4 +1,17 @@
-<nav>
+<nav style="position: relative;">
+
+  <div class="nav-dropdown" 
+    style="
+      background: green;
+      position: absolute;
+    "
+  >
+    <div class="nav-dropdown__col nav-dropdown__col-1">Col 1</div>
+    <div class="nav-dropdown__col nav-dropdown__col-2">Col 2</div>
+    <div class="nav-dropdown__col nav-dropdown__col-3">Col 3</div>
+    <div class="nav-dropdown__col nav-dropdown__col-4">Col 4</div>
+  </div>
+
   {% comment %} 
   <div class="nav-mobile">
 
@@ -78,6 +91,20 @@
         <li class="nav-item" data-id="new_releases">
           <span class="nav-item__text">New Releases</span>
         </li>
+        <script>
+          //const one = document.querySelector('.nav-item');
+          //const two = document.querySelector('.nav-item__text');
+          //one.addEventListener('click', (e) => {
+          //  console.log('one');
+          //  e.stopPropagation();
+          //}, true);
+          //two.addEventListener('click', () => {
+          //  console.log('two');
+          //}, true);
+        </script>
+
+
+
         <li class="nav-item" data-id="men">
           <span class="nav-item__text">Men</span>
         </li>
@@ -111,4 +138,3 @@
   </div>
 
 </nav>
-
