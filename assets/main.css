@@ -97,7 +97,7 @@ nav {
 nav .nav-dropdown {
   position: fixed;
   top: calc(-1 * var(--nav-dropdown-height));
-  z-index: 2;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
@@ -112,8 +112,14 @@ nav .nav-dropdown {
   }
 }
 
-nav .nav-dropdown__col {
-  border: dashed hotpink 5px;
+nav .nav-dropdown__col h5 {
+  color: #111;
+  font-size: 1.4em;
+}
+
+nav .nav-dropdown__col a {
+  color: #757575;
+  font-size: 1.35em;
 }
 
 nav .nav-desktop .nav__top {

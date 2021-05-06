@@ -1,0 +1,39 @@
+<h1 class="t-collection-_-a">collection</h1>
+<h1 class="t-collection-_-b">{{ collection.title }},  with total # of products: {{ collection.all_products_count }}</h1>
+
+{%- for product in collection.products -%}
+  <div>
+    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+
+    {{ product.price | money }}
+
+    {%- if product.available == false -%}
+      <br><strong>sold out</strong>
+    {%- endif -%}
+
+    <a href="{{ product.url | within: collection }}">
+      <img src="{{ product.featured_image.src | img_url: '700x' }}" alt="{{ product.featured_image.alt | escape }}">
+    </a>
+
+  </div>
+
+{%- else -%}
+  <p>no matches</p>
+{%- endfor -%}
+
+<style>
+  .t-collection-_-a {
+    background: green;
+  }
+  .t-collection-_-b {
+    background: blue;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "Collection Template",
+    "settings": []
+  }
+{% endschema %}

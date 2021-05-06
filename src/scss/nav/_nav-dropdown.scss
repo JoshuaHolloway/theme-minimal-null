@@ -1,7 +1,7 @@
 .nav-dropdown { position: fixed;
 
   top: calc(-1 * var(--nav-dropdown-height));
-  z-index: 2;
+  z-index: 1;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -10,6 +10,9 @@
   height: var(--nav-dropdown-height);
   width: 100vw;
   
+
+
+
   background: $background-1;
 
   @media screen and (max-width: 1024px) { // x <= 1024
@@ -17,6 +20,14 @@
   }
 
   &__col {
-    border: dashed hotpink 5px;
+    h5 {
+      color: $color-1;
+      font-size: 1.4em;
+    }
+    a {
+      color: $color-3;
+      font-size: 1.35em;
+    }
+    // border: dashed hotpink 5px;
   }
 }
