@@ -1,0 +1,10 @@
+$scss-var-demo: calc(#{'"{{ "#7ab55c" | color_brightness }}"'} / 100);
+
+/* {% assign liquid_var_demo = '#7ab55c' %} */
+div {
+  // background-color: $bg;
+  // https://adambohannon.me/shopify-development-using-liquid-syntax-in-sass-and-compiling-with-gulp
+  background-color: #{'"{{ settings.background_color }}"'};
+  color: $scss-var-demo;
+  border-right: #{'"{{ liquid_var_demo }}"'} solid 5px;
+}
