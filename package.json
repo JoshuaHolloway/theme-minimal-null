@@ -20,8 +20,14 @@
   },
   "homepage": "https://github.com/JoshuaHolloway/theme-minimal-null#readme",
   "dependencies": {
+    "@shopify/themekit": "^1.1.7",
+    "gsap": "npm:@gsap/shockingly@^3.6.1",
     "webpack": "^5.36.2",
-    "webpack-cli": "^4.6.0",
-    "gsap": "npm:@gsap/shockingly@^3.6.1"
+    "webpack-cli": "^4.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0"
   }
 }
