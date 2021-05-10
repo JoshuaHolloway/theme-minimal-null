@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'main.css' | asset_url | stylesheet_tag }}
-  {{ 'custom-styles.css' | asset_url | stylesheet_tag }}
+  {% comment %} {{ 'custom-styles.css' | asset_url | stylesheet_tag }} {% endcomment %}
 </head>
 
 <body>

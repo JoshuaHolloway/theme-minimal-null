@@ -2,4 +2,7 @@ $bg: yellow;
 
 div {
   background-color: $bg;
+  // https://adambohannon.me/shopify-development-using-liquid-syntax-in-sass-and-compiling-with-gulp
+  // background-color: #{'"{{ settings.background_color }}"'};
+  // background: green;
 }

@@ -1,2 +1,1 @@
-div {
-  background-color: yellow; }
+div{background-color:"{{ settings.background_color }}"}
