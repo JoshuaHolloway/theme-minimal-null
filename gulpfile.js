@@ -15,8 +15,10 @@ gulp.task('sass', function() {
     .pipe(autoprefixer())                                                // -add vendoer prefixes
     .pipe(replace('"{{', "{{"))                                          // -get rid of the double quotes inside the single quotes
     .pipe(replace('}}"', "}}"))
+    .pipe(replace('/*', ""))
+    .pipe(replace('*/', ""))
     // .pipe(cleanCSS({compatibility: 'ie11'}))                          // -minifiy
-    .pipe(rename("custom-styles.scss.liquid"))                                   // -rename our output to a .liquid file
+    .pipe(rename("custom-styles.css.liquid"))                                   // -rename our output to a .liquid file
     .pipe(gulp.dest('./assets'));                                        // -destination
 });
 
@@ -38,3 +40,5 @@ gulp.task('watch', function() {
   });
 
 });
+
+// https://adambohannon.me/shopify-development-using-liquid-syntax-in-sass-and-compiling-with-gulp
