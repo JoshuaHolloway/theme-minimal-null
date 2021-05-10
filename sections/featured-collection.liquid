@@ -1,0 +1,25 @@
+{%- assign collection = collections['featured'] -%}
+
+
+{%- for product in collection.products -%}
+
+  {% comment %} JOSH: I never confirmed that moving this into a snippet actually worked!!! {% endcomment %}
+  {%- include 'product-item' -%}
+
+{%- else -%}
+  <p>no matches</p>
+{%- endfor -%}
+
+
+{% schema %}
+  {
+    "name": "Featured-Collection",
+    "settings": [],
+    "presets": [
+      {
+        "category": "Custom Content",
+        "name": "Featured Collection"
+      }
+    ]
+  }
+{% endschema %}

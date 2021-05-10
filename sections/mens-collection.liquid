@@ -1,0 +1,22 @@
+{%- assign collection = collections['mens'] -%}
+
+{%- for product in collection.products -%}
+
+  {{ product.title }}
+
+{%- endfor -%}
+
+{% comment %} 
+{% schema %}
+  {
+    "name": "Mens-Collection",
+    "settings": [],
+    "presets": [
+      {
+        "category": "Custom Content",
+        "name": "Mens Collection"
+      }
+    ]
+  }
+{% endschema %}
+{% endcomment %}

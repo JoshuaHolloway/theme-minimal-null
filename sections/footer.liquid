@@ -1,10 +1,27 @@
 <footer>
   Copyright Josh Holloway
+
+  <br />
+
+  {{ section.settings.color_borders }}
 </footer>
 
 {% schema %}
   {
     "name": "Footer",
-    "settings": []
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Border colors",
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Body text",
+        "default": "#333333"
+      }
+    ]
   }
 {% endschema %}
