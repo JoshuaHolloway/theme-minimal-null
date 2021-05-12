@@ -1,7 +1,6 @@
 <ul>
+  {% assign pre = type | append: '--' %}
   {% for tag in collection.all_tags %}
-
-      {% assign pre = {{type | append: '--' }} %}
       {% if tag contains pre and tag != type %}
 
         <li>
@@ -14,7 +13,6 @@
         </li>
 
       {% endif %}
-
-    
   {% endfor %}
+
 </ul>

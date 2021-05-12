@@ -16,7 +16,8 @@
 
   {%- section 'header' -%}
 
-  {% include 'navbar' %}
+  {% comment %} {% include 'navbar' %} {% endcomment %}
+  {% section 'navbar-snippet' %}
 
   <main role="main">
     {{ content_for_layout }}
