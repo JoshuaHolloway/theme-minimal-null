@@ -3,15 +3,8 @@
   top: calc(-1 * var(--nav-dropdown-height));
   z-index: 1;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-
   height: var(--nav-dropdown-height);
   width: 100vw;
-  
-
-
 
   background: $background-1;
 
@@ -19,15 +12,30 @@
     & { display: none; }
   }
 
-  &__col {
-    h5 {
-      color: $color-1;
-      font-size: 1.4em;
-    }
-    a {
-      color: $color-3;
-      font-size: 1.35em;
-    }
-    // border: dashed hotpink 5px;
+  .nav-dropdown__collection-men {
+    background: lightblue;
   }
+  .nav-dropdown__collection-women {
+    background: lightgreen;
+  }
+  .nav-dropdown__collection {
+
+    display: none; // Switch specific panel to display: grid on click of nav-item
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+
+    .nav-dropdown__col {
+      h5 {
+        color: $color-1;
+        font-size: 1.4em;
+      }
+      a {
+        color: $color-3;
+        font-size: 1.35em;
+      }
+      // border: dashed hotpink 5px;
+    }
+  }
+
+
 }

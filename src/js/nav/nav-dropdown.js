@@ -108,20 +108,14 @@ const slide = (className) => {
 
 // ==============================================
 
-const open = (nav_item_id) => {
+const open = () => {
 
-  console.log('clicked nav item: ', nav_item_id);
-
-  // Add dynamic data to dropdown:
-  //add_dynamic_dropdown_data(nav_item_id);
-  
   if (is_nav_dropdown_open === false) {
     master_timeline = gsap.timeline();
     master_timeline.add( slide('.nav-dropdown')     );
     // master_timeline.add( blur_background()          );
     // master_timeline.add( translucent_overlay(), '<' );
   }
-  
 };
 
 // ==============================================
@@ -140,9 +134,20 @@ const click_listener = (event) => {
   // event.stopPropagation(); // -Don't listen for click event on <span> inside .nav-item
   const nav_item = event.currentTarget;
   
+  const display_collection = (nav_item_id) => {
+    const collections = document.querySelectorAll('.nav-dropdown__collection');
+    collections.forEach((collection) => {
+      collection.style.display = 'none';  
+    });
+    const collection = document.querySelector(`.nav-dropdown__collection-${nav_item_id}`);
+    collection.style.display = 'grid';
+  };
+
   // Open nav-dropdown with corresponding data
   const nav_item_id = nav_item.dataset.id;
-  open(nav_item_id);
+  console.log('clicked nav item: ', nav_item_id);
+  display_collection(nav_item_id);
+  open();
   
   // -first reset all event listeners, then disable only the one currently open
   // -need to reset them in case you click one nav-item,

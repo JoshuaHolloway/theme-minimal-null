@@ -98,9 +98,6 @@ nav .nav-dropdown {
   position: fixed;
   top: calc(-1 * var(--nav-dropdown-height));
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
   height: var(--nav-dropdown-height);
   width: 100vw;
   background: #fff;
@@ -112,12 +109,26 @@ nav .nav-dropdown {
   }
 }
 
-nav .nav-dropdown__col h5 {
+nav .nav-dropdown .nav-dropdown__collection-men {
+  background: lightblue;
+}
+
+nav .nav-dropdown .nav-dropdown__collection-women {
+  background: lightgreen;
+}
+
+nav .nav-dropdown .nav-dropdown__collection {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+
+nav .nav-dropdown .nav-dropdown__collection .nav-dropdown__col h5 {
   color: #111;
   font-size: 1.4em;
 }
 
-nav .nav-dropdown__col a {
+nav .nav-dropdown .nav-dropdown__collection .nav-dropdown__col a {
   color: #757575;
   font-size: 1.35em;
 }
@@ -202,11 +213,4 @@ nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__
 
 nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked, nav .nav-desktop .nav__bottom .content-container.nav-items .nav-item .nav-item__text.clicked:not(.hovered) {
   border-bottom: solid black 3px;
-}
-
- {% assign liquid_var_demo = '#7ab55c' %} 
-div {
-  background-color: {{ settings.background_color }};
-  color: calc({{ "#7ab55c" | color_brightness }} / 100);
-  border-right: {{ liquid_var_demo }} solid 5px;
 }

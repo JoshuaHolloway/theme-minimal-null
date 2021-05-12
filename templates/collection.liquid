@@ -1,1 +1,26 @@
-{%- section 'collection-template' -%}
+{% comment %} {%- section 'collection-template' -%} {% endcomment %}
+
+{% comment %} CODE BELOW IS FOR TAGS (debugging currently) {% endcomment %}
+{% for tag in collection.all_tags %}
+
+  tag: {{tag}}
+
+  {{ tag | handle }}
+
+  {% comment %} https://shopify.dev/docs/themes/liquid/reference/objects/collection#collection-tags {% endcomment %}
+  {{collection.tags}}
+  {% comment %} Returns the tags of products in a collection that match the current view.{% endcomment %}
+  {% comment %} For example, if you are viewing a collection filtered by tag, 
+  collection.tags will return the tags for the products that match the current filter. {% endcomment %}
+{% endfor %}
+
+
+<hr />
+
+{% comment %} https://shopify.dev/docs/themes/liquid/reference/objects/current-tags {% endcomment %}
+current_tags: {{ current_tags }}
+{% comment %} The current_tags variable is an array that contains all tags that are being used to filter a collection or blog. {% endcomment %}
+{% comment %} /collections/mens/shoes+running  -->  ShoesRunning {% endcomment %}
+
+<hr />
+

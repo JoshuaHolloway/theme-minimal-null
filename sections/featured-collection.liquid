@@ -1,5 +1,6 @@
-{%- assign collection = collections['featured'] -%}
-
+{% comment %} {%- assign collection = collections['featured'] -%} {% endcomment %}
+{%- assign collection_handle = section.settings.collection -%}
+{%- assign collection = collections[collection_handle] -%}
 
 {%- for product in collection.products -%}
 
@@ -13,8 +14,14 @@
 
 {% schema %}
   {
-    "name": "Featured-Collection",
-    "settings": [],
+    "name": "Featured Collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ],
     "presets": [
       {
         "category": "Custom Content",

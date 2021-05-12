@@ -13,14 +13,14 @@ const rename = require("gulp-rename");
 gulp.task('sass', function() {
   return gulp.src('./src/scss/main.scss')                         // -source
     // .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError)) 
-    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))  // -compile with sasss
+    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))  // -compile with sass
     .pipe(autoprefixer())                                                // -add vendoer prefixes
     .pipe(replace('"{{', "{{"))                                          // -get rid of the double quotes inside the single quotes
     .pipe(replace('}}"', "}}"))
     .pipe(replace('/*', ""))
     .pipe(replace('*/', ""))
-    // .pipe(cleanCSS({compatibility: 'ie11'}))                          // -minifiy
-    .pipe(rename("main.css.liquid"))                                   // -rename our output to a .liquid file
+    // .pipe(cleanCSS({compatibility: 'ie11'}))                             // -minifiy
+    .pipe(rename("main.css.liquid"))                                     // -rename our output to a .liquid file
     .pipe(gulp.dest('./assets'));                                        // -destination
 });
 
