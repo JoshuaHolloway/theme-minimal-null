@@ -2,12 +2,6 @@
 {%- assign collection_handle = section.settings.collection -%}
 {%- assign collection = collections[collection_handle] -%}
 
-
-<p>collection handle:  {{ collection_handle }} </p>
-<p>collection:  {{ collection }} </p>
-
-
-
 {%- for product in collection.products -%}
 
   {% comment %} JOSH: I never confirmed that moving this into a snippet actually worked!!! {% endcomment %}

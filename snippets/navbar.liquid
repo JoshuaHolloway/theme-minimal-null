@@ -10,14 +10,13 @@
 
       <div class="nav-dropdown__col nav-dropdown__col-2">
         <h5>Shoes</h5>
-        {% comment %} Want: {% render 'josh', collection_name: 'mens', tag: 'Shoes' %} {% endcomment %}
-        {% render 'josh', collection: collections['mens'], type: 'shoes' %}
+        {% render 'nav-dropdown-col', collection: collection_1, type: tag_1 %}
       </div>
 
       <div class="nav-dropdown__col nav-dropdown__col-3">
         <h5>Clothing</h5>
         {% comment %} Want: {% render 'josh', collection_name: 'mens', tag: 'Clothing' %} {% endcomment %}
-        {% render 'josh', collection: collections['mens'], type: 'clothing' %}
+        {% render 'nav-dropdown-col', collection: collection_1, type: 'clothing' %}
       </div>
       
       <div class="nav-dropdown__col nav-dropdown__col-4">
@@ -36,13 +35,13 @@
       <div class="nav-dropdown__col nav-dropdown__col-2">
         <h5>Shoes</h5>
         {% comment %} Want: {% render 'josh', collection_name: 'mens', tag: 'Shoes' %} {% endcomment %}
-        {% render 'josh', collection: collections['womens'], type: 'shoes' %}
+        {% render 'nav-dropdown-col', collection: collection_2, type: 'shoes' %}
       </div>
 
       <div class="nav-dropdown__col nav-dropdown__col-3">
         <h5>Clothing</h5>
         {% comment %} Want: {% render 'josh', collection_name: 'mens', tag: 'Clothing' %} {% endcomment %}
-        {% render 'josh', collection: collections['womens'], type: 'clothing' %}
+        {% render 'nav-dropdown-col', collection: collection_2, type: 'clothing' %}
       </div>
       
       <div class="nav-dropdown__col nav-dropdown__col-4">

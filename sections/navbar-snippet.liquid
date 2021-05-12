@@ -1,1 +1,53 @@
+{%- assign collection_handle = section.settings.collection_1 -%}
+{%- assign collection_1 = collections[collection_handle] -%}
+
+{%- assign collection_handle_2 = section.settings.collection_2 -%}
+{%- assign collection_2 = collections[collection_handle_2] -%}
+
+{%- assign tag_1 = section.settings.col_1 -%}
+
 {% include 'navbar' %}
+
+<hr />
+
+<div>
+  <h5>Begin navbar-snippet.liquid</h5>
+
+  <p>tag_1:  {{ tag_1 }} </p>
+
+  <h5>End navbar-snippet.liquid</h5>
+</div>
+
+<hr />
+
+{% schema %}
+  {
+    "name": "Navbar",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Collection 2"
+      },
+      {
+        "type": "text",
+        "id": "col_1",
+        "label": "col 1 tag",
+        "default": "empty",
+        "info": "Choose a product tag to list a set of items for a given collection in column 1 in the nav-dropdown menu.",
+        "placeholder": "Choose a product tag"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Custom Content",
+        "name": "Navbar"
+      }
+    ]
+  }
+{% endschema %}

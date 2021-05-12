@@ -1,0 +1,26 @@
+{% if collection == empty %}
+
+  <p>choose a valid collection,  collection: {{collection}}</p>
+  
+{% elsif collection.all_tags contains type %}
+
+  <ul>
+    {% assign pre = type | append: '--' %}
+    {% for tag in collection.all_tags %}
+        {% if tag contains pre and tag != type %}
+
+          <li>
+            <a href="/collections/{{collection.title}}/{{tag}}">
+              {{tag | remove: pre }}
+            </a>
+          </li>
+
+        {% endif %}
+    {% endfor %}
+  </ul>
+
+{% else %}
+
+  <p>choose a valid tag,  tag: {{type}}</p>
+
+{% endif %}
