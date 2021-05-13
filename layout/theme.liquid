@@ -9,14 +9,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'main.css' | asset_url | stylesheet_tag }}
-  {{ 'custom-styles.css' | asset_url | stylesheet_tag }}
+  
+  <script src="{{ 'shopify-money.js' | asset_url }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body>
 
-  {%- section 'header' -%}
-
-  {% comment %} {% include 'navbar' %} {% endcomment %}
   {% section 'navbar-snippet' %}
 
   <main role="main">
@@ -26,5 +26,7 @@
   {%- section 'footer' -%}
 
   {{ 'bundle.js' | asset_url | script_tag }}
+
+
 </body>
 </html>
