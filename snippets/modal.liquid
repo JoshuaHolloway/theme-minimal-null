@@ -1,0 +1,65 @@
+  <div class="modal" style="position: absolute;">
+
+    <form>
+      <label>
+        Email address*
+        <input id="modal__email-input" type="text" placeholder="Email address" name="email" />
+      </label>
+      <script>
+        const form = { email: '' };
+
+        const onChange = (event) => {
+          const name = event.target.name;
+          const value = event.target.value;
+          form[name] = value;
+          email_input.setAttribute('value', form.email);
+          console.log('form: ', form, '  event.target: ', event.target);
+        };
+
+        const email_input = document.querySelector('#modal__email-input');
+        email_input.addEventListener('input', onChange);
+      </script>
+
+      <label>
+        Date of Birth*
+        <input type="text" placeholder="mm/dd/yyyy"/>
+      </label>
+
+      <label>
+        Shopping Preference*
+        {% comment %} <select name="drop" value={form.drop} onChange={onChange}> {% endcomment %}
+        <select name="drop">
+          <option value="">Choose One!</option>
+          <option value="drop1">Drop 1</option>
+          <option value="drop2">Drop 2</option>
+          <option value="drop3">Drop 3</option>
+        </select>
+      </label>
+
+      <button>
+        SIGN UP
+      </button>
+    </form>
+
+  </div>
+
+  <style>
+    body {
+      border: solid lightgreen 5px;
+    }
+    :root {
+      --modal-width:  500px;
+      --modal-height: 700px;
+    }
+    .modal {
+      top:  calc(50vh - calc( var(--modal-height) / 2));
+      left: calc(50vw - calc( var(--modal-width)  / 2));
+      z-index: 2;
+
+      height: var(--modal-height);
+      width:  var(--modal-width);
+      background: #FFFFFF;
+      color: #000000;
+      border: dashed hotpink 5px;
+    }
+  </style>

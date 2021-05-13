@@ -15,9 +15,9 @@
   <script src="https://unpkg.com/vue@next"></script>
 </head>
 
-<body>
+<body style="position: relative;">
 
-  {% section 'navbar-snippet' %}
+  {%- section 'navbar-snippet' -%}
 
   <main role="main">
     {{ content_for_layout }}
@@ -25,8 +25,9 @@
 
   {%- section 'footer' -%}
 
-  {{ 'bundle.js' | asset_url | script_tag }}
+  {%- include 'modal' -%}
 
+  {{ 'bundle.js' | asset_url | script_tag }}
 
 </body>
 </html>
