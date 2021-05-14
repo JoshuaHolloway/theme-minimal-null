@@ -1,11 +1,14 @@
-  <div class="modal" style="position: absolute;">
+  <div id="app" class="modal" style="position: absolute;">
 
     <form>
       <label>
         Email address*
         <input id="modal__email-input" type="text" placeholder="Email address" name="email" />
+        <p>((dob))</p>
       </label>
+
       <script>
+        // Two-way data-binding with vanilla JS
         const form = { email: '' };
 
         const onChange = (event) => {
@@ -22,7 +25,7 @@
 
       <label>
         Date of Birth*
-        <input type="text" placeholder="mm/dd/yyyy"/>
+        <input type="text" placeholder="mm/dd/yyyy" v-model="dob"/>
       </label>
 
       <label>

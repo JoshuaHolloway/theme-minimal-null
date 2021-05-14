@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/gsap/CSSPlugin.js":
@@ -8,6 +7,7 @@
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CSSPlugin": () => (/* binding */ CSSPlugin),
@@ -1441,6 +1441,7 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GSCache": () => (/* binding */ GSCache),
@@ -5354,6 +5355,7 @@ var Power0 = _easeMap.Power0,
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "gsap": () => (/* binding */ gsapWithCSS),
@@ -5399,6 +5401,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var _util_geometry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/geometry.js */ "./src/js/util/geometry.js");
@@ -5599,6 +5602,7 @@ reset_nav_item_click_listeners();
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "viewport_geometry": () => (/* binding */ viewport_geometry),
@@ -5673,6 +5677,28 @@ const get_center_shifts = (viewport_center_x, viewport_center_y, x0, y0) => {
 
 // ========================================================
 
+/***/ }),
+
+/***/ "./src/js/vue/main.js":
+/*!****************************!*\
+  !*** ./src/js/vue/main.js ***!
+  \****************************/
+/***/ (() => {
+
+// Create Vue instance
+const app = Vue.createApp({
+  data() {
+    return {
+      dob: ''
+    };
+  },
+  delimiters: ["((", "))"]
+});
+
+// Mount Vue App
+const mountedApp = app.mount('#app');
+// mountedApp.product = 'Shoes';
+
 /***/ })
 
 /******/ 	});
@@ -5702,6 +5728,18 @@ const get_center_shifts = (viewport_center_x, viewport_center_y, x0, y0) => {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -5732,13 +5770,17 @@ const get_center_shifts = (viewport_center_x, viewport_center_y, x0, y0) => {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_nav_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nav/nav-dropdown.js */ "./src/js/nav/nav-dropdown.js");
+/* harmony import */ var _vue_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vue/main.js */ "./src/js/vue/main.js");
+/* harmony import */ var _vue_main_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vue_main_js__WEBPACK_IMPORTED_MODULE_1__);
+
 
 })();
 
