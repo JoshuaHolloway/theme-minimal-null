@@ -5395,16 +5395,16 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 /***/ }),
 
-/***/ "./src/js/nav/nav-dropdown.js":
-/*!************************************!*\
-  !*** ./src/js/nav/nav-dropdown.js ***!
-  \************************************/
+/***/ "./src/js/vanilla-js/nav/nav-dropdown.js":
+/*!***********************************************!*\
+  !*** ./src/js/vanilla-js/nav/nav-dropdown.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var _util_geometry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/geometry.js */ "./src/js/util/geometry.js");
+/* harmony import */ var _util_geometry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/geometry.js */ "./src/js/vanilla-js/util/geometry.js");
 // ==============================================
 
 
@@ -5596,10 +5596,10 @@ reset_nav_item_click_listeners();
 
 /***/ }),
 
-/***/ "./src/js/util/geometry.js":
-/*!*********************************!*\
-  !*** ./src/js/util/geometry.js ***!
-  \*********************************/
+/***/ "./src/js/vanilla-js/util/geometry.js":
+/*!********************************************!*\
+  !*** ./src/js/vanilla-js/util/geometry.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5676,6 +5676,28 @@ const get_center_shifts = (viewport_center_x, viewport_center_y, x0, y0) => {
 
 
 // ========================================================
+
+/***/ }),
+
+/***/ "./src/js/vanilla-js/util/two-way-data-binding.js":
+/*!********************************************************!*\
+  !*** ./src/js/vanilla-js/util/two-way-data-binding.js ***!
+  \********************************************************/
+/***/ (() => {
+
+// Two-way data-binding with vanilla JS
+const form = { email: '' };
+
+const onChange = (event) => {
+  const name = event.target.name;
+  const value = event.target.value;
+  form[name] = value;
+  email_input.setAttribute('value', form.email);
+  console.log('form: ', form, '  event.target: ', event.target);
+};
+
+const email_input = document.querySelector('#modal__email-input');
+email_input.addEventListener('input', onChange);
 
 /***/ }),
 
@@ -5777,9 +5799,12 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _nav_nav_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nav/nav-dropdown.js */ "./src/js/nav/nav-dropdown.js");
+/* harmony import */ var _vanilla_js_nav_nav_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vanilla-js/nav/nav-dropdown.js */ "./src/js/vanilla-js/nav/nav-dropdown.js");
 /* harmony import */ var _vue_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vue/main.js */ "./src/js/vue/main.js");
 /* harmony import */ var _vue_main_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vue_main_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _vanilla_js_util_two_way_data_binding_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vanilla-js/util/two-way-data-binding.js */ "./src/js/vanilla-js/util/two-way-data-binding.js");
+/* harmony import */ var _vanilla_js_util_two_way_data_binding_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vanilla_js_util_two_way_data_binding_js__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 })();

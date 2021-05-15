@@ -1,0 +1,99 @@
+:root {
+  --modal-width:  500px;
+  --modal-height: 700px;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+
+  top:  calc(50vh - calc( var(--modal-height) / 2));
+  left: calc(50vw - calc( var(--modal-width)  / 2));
+  z-index: 2;
+
+  height: var(--modal-height);
+  width:  var(--modal-width);
+  background: #FFFFFF;
+  color: #000000;
+  border: dashed lightgreen 5px;
+
+  .modal__header { position: relative;
+
+    height: 10%;
+    width: 100%;
+
+    border: solid deeppink 5px;
+
+    .modal__header__left {
+      @include center;
+
+      height: 100%;
+      width: 100%;
+
+      border: dashed darkviolet 2px;
+    }
+
+    .modal__header__right { position: absolute;
+      top: 0;
+      right: 0;
+
+      @include center;
+
+      width: 10%;
+      height: 100%;
+      border: dashed palegoldenrod 2px;
+    }
+  }
+
+  .modal__body {
+    @include center;
+    flex-grow: 1;
+    width: 100%;
+    border: solid deepskyblue 5px;
+
+    .modal__form {
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+  
+      height: 80%;
+      width: 80%;
+      border: solid red 5px;
+  
+      .modal__row {
+        @include center;
+        border: dashed lightblue 5px;
+
+        .modal__label-container {
+          border: dotted blue 2px;
+          width: 100%;
+
+          input, select {
+            height: 35px;
+            width: 100%;
+            font-size: 1em;
+          }
+        }
+
+        &__title > h5 { font-size: 1.2em; }
+        &__subtitle > p { font-size: 0.8em; }
+        &__email {
+          width: 100%;
+        }
+        &__dob {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 1fr;
+          gap: 1%;
+        }
+        &__button > button {
+          width: 100%; 
+          padding: 10px 0px;
+          font-size: 1.1em;
+          background: black;
+          color: white; 
+        }
+        &__footer > p { font-size: 0.7em; }
+      } 
+    }
+  }
+
+}

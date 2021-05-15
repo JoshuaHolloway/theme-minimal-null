@@ -1,68 +1,86 @@
   <div id="app" class="modal" style="position: absolute;">
 
-    <form>
-      <label>
-        Email address*
-        <input id="modal__email-input" type="text" placeholder="Email address" name="email" />
-        <p>((dob))</p>
-      </label>
+    {% comment %} Logo and X {% endcomment %}
+    <div class="modal__header">
+      
+      <div class="modal__header__left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+          <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+        </svg>
+      </div>
 
-      <script>
-        // Two-way data-binding with vanilla JS
-        const form = { email: '' };
+      <div class="modal__header__right">
 
-        const onChange = (event) => {
-          const name = event.target.name;
-          const value = event.target.value;
-          form[name] = value;
-          email_input.setAttribute('value', form.email);
-          console.log('form: ', form, '  event.target: ', event.target);
-        };
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+        </svg>
 
-        const email_input = document.querySelector('#modal__email-input');
-        email_input.addEventListener('input', onChange);
-      </script>
+      </div>
+    </div>
 
-      <label>
-        Date of Birth*
-        <input type="text" placeholder="mm/dd/yyyy" v-model="dob"/>
-      </label>
+    <div class="modal__body">    
+      <form class="modal__form">
 
-      <label>
-        Shopping Preference*
-        {% comment %} <select name="drop" value={form.drop} onChange={onChange}> {% endcomment %}
-        <select name="drop">
-          <option value="">Choose One!</option>
-          <option value="drop1">Drop 1</option>
-          <option value="drop2">Drop 2</option>
-          <option value="drop3">Drop 3</option>
-        </select>
-      </label>
+        {% comment %} Get News and Offers {% endcomment %}
+        <div class="modal__row modal__row__title">
+          <h5>GET NEWS AND OFFERS<h5>
+        </div>
 
-      <button>
-        SIGN UP
-      </button>
-    </form>
+        {% comment %} Sign up for email to get special news and offers... {% endcomment %}
+        <div class="modal__row modal__row__subtitle">
+          <p>Sign up for email to get special news and offers.</p>
+        </div>
+
+        {% comment %} Email Address {% endcomment %}
+        <div class="modal__row modal__row__email">
+        
+          <div class="modal__label-container">
+            <label>
+              <p>Email address*</p>
+              
+              <input id="modal__email-input" type="text" placeholder="Email address" name="email" />
+            </label>
+          </div>
+        
+        </div>
+
+        {% comment %} DOB / Shopping Preference {% endcomment %}
+        <div class="modal__row modal__row__dob">
+        
+          <div class="modal__label-container">
+            <label>
+              <p>Date of Birth*</p>
+              <input type="date" placeholder="mm/dd/yyyy" v-model="dob"/>
+              <p>((dob))</p>
+            </label>
+          </div>
+
+          <div class="modal__label-container">
+            <label>
+              <p>Shopping Preference*</p>
+              {% comment %} <select name="drop" value={form.drop} onChange={onChange}> {% endcomment %}
+              <select name="drop">
+                <option value="">Choose One!</option>
+                <option value="drop1">Drop 1</option>
+                <option value="drop2">Drop 2</option>
+                <option value="drop3">Drop 3</option>
+              </select>
+            </label>
+          </div>
+        
+        </div>
+
+        {% comment %} SIGN UP button {% endcomment %}
+        <div class="modal__row modal__row__button">
+          <button>SIGN UP</button>
+        </div>
+
+        {% comment %} By Signing up you agree to Privacy Policy and Terms of Use {% endcomment %}
+        <div class="modal__row modal__row__footer">
+          <p>By signing up you agree to our <a href="">Privacy Policy</a> and <a href="">Terms of Use</a></p>
+        </div>
+
+      </form>
+    </div>
 
   </div>
-
-  <style>
-    body {
-      border: solid lightgreen 5px;
-    }
-    :root {
-      --modal-width:  500px;
-      --modal-height: 700px;
-    }
-    .modal {
-      top:  calc(50vh - calc( var(--modal-height) / 2));
-      left: calc(50vw - calc( var(--modal-width)  / 2));
-      z-index: 2;
-
-      height: var(--modal-height);
-      width:  var(--modal-width);
-      background: #FFFFFF;
-      color: #000000;
-      border: dashed hotpink 5px;
-    }
-  </style>
