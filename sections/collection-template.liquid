@@ -1,6 +1,7 @@
 <h1 class="t-collection-_-a">collection</h1>
 <h1 class="t-collection-_-b">{{ collection.title }},  with total # of products: {{ collection.all_products_count }}</h1>
 
+
 {%- for product in collection.products -%}
 
   {% include 'collection-template-card' %}

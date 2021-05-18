@@ -17,6 +17,3 @@ const app = Vue.createApp({
   delimiters: ["((", "))"]
 });
 
-// Mount Vue App
-const mountedApp = app.mount('#app');
-// mountedApp.product = 'Shoes';

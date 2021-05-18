@@ -11,4 +11,114 @@
 {% endfor %}
 {% endcomment %}
 
-{{ content_for_index }}
+
+
+{% comment %} {{ content_for_index }} {% endcomment %}
+
+  <div id="app2">
+    <product-display  premium="premium"></product-display>
+    <product-display :premium="premium"></product-display>
+    <!-- reactively receive value of premium as it updates -->
+  </div>
+
+  <!-- Import App -->
+  <!-- <script src="./main.js"></script> -->
+  <!-- Step 1 -->
+  <script>
+    const options_obj = {
+      data() {
+        return {
+          premium: false,
+        };
+      },
+      methods: {},
+      delimiters: ["((", "))"]
+    };
+
+    // Create Vue instance
+    const app2 = Vue.createApp(options_obj);
+  </script>
+
+
+
+  <!-- <script src="./components/ProductDisplay.js"></script> -->
+  <!-- Step 2 -->
+  <script>
+    app2.component('product-display', {
+      props: {
+        premium: {// expected a 'premium' prop
+          // prop-validation
+          type: Boolean,
+          required: true
+        }
+      },
+      template: 
+      /* html */
+      ` 
+      <div class="product-display">
+        <h1>TEST</h1>
+      </div>
+      `,
+      data: function() {;
+        return {
+          brand: 'Brand',
+          product: 'Socks',
+          description: 'This is description...',
+          // image: './assets/img/socks.png',
+          url: 'https://www.google.com',
+          currentVariant: 0,
+          // inStock: false,
+          // inventory: 5,
+          details: ['a', 'b', 'c'],
+          variants: [
+                                          // path relative to index.html
+            {id: 1, color: 'green', image: './assets/img/socks-green.png', inventory: 15}, 
+            {id: 2, color: 'blue',  image: './assets/img/socks-blue.png', inventory: 0}
+          ],
+          cart: 0,
+          josh_style: {
+            color: 'red',
+            fontSize: '14px'
+          }
+        };
+      },
+      methods: {
+        addToCart() {
+          this.cart += 1;
+        },
+        updateVariant(idx) {
+          this.currentVariant = idx;
+        }
+      },
+      computed: {
+        title() {
+          return this.brand + ' ' + this.product;
+        },
+        image() {
+          return this.variants[this.currentVariant].image; 
+        },
+        inStock() {
+          const qty = this.variants[this.currentVariant].inventory;
+          if (qty > 0)
+            return true;
+          else
+            return false;
+        },
+        shipping() {
+          if (this.premium) {
+            return 'Free';
+          } else {
+            return 'Not Premium!';
+          }
+        }
+      },
+      delimiters: ["((", "))"]
+    });
+  </script>
+
+  <!-- Step 3: -->
+  <!-- Mount App -->
+  <script>
+    const mountedapp2 = app2.mount('#app2');
+    mountedapp2.product = 'Shoes';
+  </script>
